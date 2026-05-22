@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>St. Augustine Pool Co. — Pool Service & Maintenance, St. Johns County FL</title>
+  <meta name="description" content="Weekly pool cleaning, chemical balancing, and equipment maintenance for St. Johns County homeowners. Locally owned. Serving Nocatee, Ponte Vedra, St. Augustine, and surrounding areas.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lagoon:    { DEFAULT: '#0D7377', dark: '#0A5C60', light: '#1A9499' },
+            sand:      { DEFAULT: '#F0E6CC', light: '#FAF7F0' },
+            sunburst:  { DEFAULT: '#D4860B', light: '#E8A020', dark: '#B8720A' },
+            palmetto:  { DEFAULT: '#4A9B7A', light: '#6DB89A' },
+            driftwood: { DEFAULT: '#2E2520', light: '#5C4D46' },
+          },
+          fontFamily: {
+            display: ['Nunito', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Motion CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FAF7F0;
+      color: #2E2520;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .font-display { font-family: 'Nunito', sans-serif; }
+
+    /* Focus styles */
+    :focus-visible {
+      outline: 3px solid #D4860B;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* Nav scroll shadow */
+    #main-nav.scrolled {
+      box-shadow: 0 2px 16px rgba(46, 37, 32, 0.10);
+    }
+
+    /* Hero wave animation */
+    .wave-path { animation: waveMove 10s ease-in-out infinite; }
+    .wave-path-2 { animation: waveMove 13s ease-in-out infinite reverse; }
+    .wave-path-3 { animation: waveMove 8s ease-in-out infinite; animation-delay: -3s; }
+
+    @keyframes waveMove {
+      0%, 100% { d: path("M0 40 Q60 20 120 40 Q180 60 240 40 Q300 20 360 40"); }
+      50%       { d: path("M0 40 Q60 60 120 40 Q180 20 240 40 Q300 60 360 40"); }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .wave-path, .wave-path-2, .wave-path-3 { animation: none; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* Service card hover */
+    .service-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(13, 115, 119, 0.14);
+    }
+
+    /* CTA button hover */
+    .btn-primary, .btn-secondary {
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+    .btn-primary:hover  { transform: scale(1.03); box-shadow: 0 4px 16px rgba(212, 134, 11, 0.35); }
+    .btn-secondary:hover { transform: scale(1.03); }
+
+    /* FAQ accordion */
+    .faq-answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s ease, padding 0.2s ease;
+    }
+    .faq-answer.open { max-height: 400px; }
+    .faq-icon { transition: transform 0.25s ease; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* Motion initial states */
+    .motion-fade { opacity: 0; transform: translateY(20px); }
+    .motion-slide { opacity: 0; transform: translateX(-24px); }
+
+    /* Scroll reveal triggered by JS */
+    .revealed { opacity: 1 !important; transform: none !important; transition: opacity 0.55s ease, transform 0.55s ease; }
+
+    /* Neighborhood pills */
+    .neighborhood-pill {
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .neighborhood-pill:hover { background-color: #0D7377; color: #FAF7F0; }
+
+    /* Step connector line */
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: calc(100% + 0.5rem);
+      width: calc(100% - 1rem);
+      height: 2px;
+      background: linear-gradient(to right, #0D7377, #4A9B7A);
+      opacity: 0.3;
+    }
+
+    /* Form inputs */
+    .form-input {
+      background: #FAF7F0;
+      border: 1.5px solid #D6C9B0;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #2E2520;
+      width: 100%;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #0D7377;
+      box-shadow: 0 0 0 3px rgba(13, 115, 119, 0.15);
+    }
+    .form-input::placeholder { color: #9A8E85; }
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     STICKY NAV
+============================================================ -->
+<nav id="main-nav" aria-label="Main navigation"
+     class="fixed top-0 left-0 right-0 z-50 bg-sand-light border-b border-sand transition-shadow duration-300">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 group" aria-label="St. Augustine Pool Co. — home">
+        <!-- Wave icon mark -->
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="14.5" stroke="#0D7377" stroke-width="1.5"/>
+          <path class="wave-path" d="M7 13 Q10 11 13 13 Q16 15 19 13 Q22 11 25 13" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <path class="wave-path-2" d="M7 16 Q10 14 13 16 Q16 18 19 16 Q22 14 25 16" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <path class="wave-path-3" d="M7 19 Q10 17 13 19 Q16 21 19 19 Q22 17 25 19" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="font-display font-800 text-lagoon text-lg leading-tight hidden sm:block" style="font-weight:800;">St. Augustine Pool Co.</span>
+        <span class="font-display font-800 text-lagoon text-lg leading-tight sm:hidden" style="font-weight:800;">SA Pool Co.</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#services" class="font-body text-sm font-medium text-driftwood hover:text-lagoon transition-colors">Services</a>
+        <a href="#service-area" class="font-body text-sm font-medium text-driftwood hover:text-lagoon transition-colors">Service Area</a>
+        <a href="#faq" class="font-body text-sm font-medium text-driftwood hover:text-lagoon transition-colors">FAQ</a>
+        <a href="tel:+19045550192" class="font-body text-sm font-medium text-lagoon hover:text-lagoon-dark transition-colors flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          (904) 555-0192
+        </a>
+        <a href="#quote" class="btn-primary bg-sunburst text-white font-display font-bold text-sm px-4 py-2 rounded-lg">Get a Quote</a>
+      </div>
+
+      <!-- Mobile: phone + menu button -->
+      <div class="flex items-center gap-3 md:hidden">
+        <a href="tel:+19045550192" class="text-lagoon" aria-label="Call us at (904) 555-0192">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+        <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu"
+                class="text-driftwood p-1">
+          <svg id="menu-open-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="menu-close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-sand bg-sand-light" role="navigation">
+    <div class="px-4 py-4 flex flex-col gap-4">
+      <a href="#services" class="font-body text-sm font-medium text-driftwood">Services</a>
+      <a href="#service-area" class="font-body text-sm font-medium text-driftwood">Service Area</a>
+      <a href="#faq" class="font-body text-sm font-medium text-driftwood">FAQ</a>
+      <a href="#quote" class="btn-primary bg-sunburst text-white font-display font-bold text-sm px-4 py-2.5 rounded-lg text-center">Get a Free Quote</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="pt-16 min-h-screen flex items-center bg-sand-light overflow-hidden" aria-label="Hero">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Copy -->
+      <div>
+        <p id="hero-eyebrow" class="motion-fade font-display font-700 text-palmetto text-sm uppercase tracking-widest mb-4" style="font-weight:700;">St. Johns County Pool Service</p>
+        <h1 id="hero-heading" class="motion-fade font-display text-driftwood leading-tight mb-5" style="font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight:800; line-height:1.1;">
+          Your pool, ready<br>every single week.
+        </h1>
+        <p id="hero-sub" class="motion-fade font-body text-driftwood-light text-lg leading-relaxed mb-8 max-w-md">
+          We handle the chemicals, the equipment, and the headaches — so you just get to enjoy the water. Reliable, local, and actually responsive when you reach out.
+        </p>
+        <div id="hero-ctas" class="motion-fade flex flex-col sm:flex-row gap-3 mb-8">
+          <a href="#quote" class="btn-primary bg-sunburst text-white font-display font-bold text-base px-6 py-3.5 rounded-xl text-center shadow-sm">
+            Get a Free Quote
+          </a>
+          <a href="#services" class="btn-secondary border-2 border-lagoon text-lagoon font-display font-bold text-base px-6 py-3.5 rounded-xl text-center hover:bg-lagoon hover:text-white transition-colors">
+            See Our Services
+          </a>
+        </div>
+        <div id="hero-trust" class="motion-fade flex flex-wrap gap-x-5 gap-y-2">
+          <span class="flex items-center gap-1.5 text-sm text-driftwood-light font-body">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A9B7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Locally owned
+          </span>
+          <span class="flex items-center gap-1.5 text-sm text-driftwood-light font-body">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A9B7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Licensed &amp; insured
+          </span>
+          <span class="flex items-center gap-1.5 text-sm text-driftwood-light font-body">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A9B7A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Serving St. Johns County
+          </span>
+        </div>
+      </div>
+
+      <!-- SVG Pool Illustration -->
+      <div id="hero-illustration" class="motion-fade flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-sm lg:max-w-md">
+          <!-- Pool surround -->
+          <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated backyard swimming pool">
+            <!-- Sky/ground background -->
+            <rect width="400" height="340" rx="24" fill="#F0E6CC"/>
+            <!-- Sun -->
+            <circle cx="340" cy="55" r="28" fill="#E8A020" opacity="0.25"/>
+            <circle cx="340" cy="55" r="18" fill="#E8A020" opacity="0.4"/>
+            <!-- Palm frond left -->
+            <path d="M40 80 Q20 40 60 20" stroke="#4A9B7A" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+            <path d="M40 80 Q0 55 30 35" stroke="#4A9B7A" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+            <path d="M40 80 Q15 75 10 55" stroke="#4A9B7A" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+            <!-- Pool deck -->
+            <rect x="60" y="140" width="280" height="160" rx="16" fill="#E8DCC4"/>
+            <!-- Pool water -->
+            <rect x="80" y="155" width="240" height="130" rx="12" fill="#0D7377" opacity="0.85"/>
+            <!-- Water shimmer layers -->
+            <path class="wave-path" d="M80 180 Q120 170 160 180 Q200 190 240 180 Q280 170 320 180" stroke="#FAF7F0" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.35"/>
+            <path class="wave-path-2" d="M80 200 Q120 190 160 200 Q200 210 240 200 Q280 190 320 200" stroke="#FAF7F0" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.25"/>
+            <path class="wave-path-3" d="M80 220 Q120 210 160 220 Q200 230 240 220 Q280 210 320 220" stroke="#FAF7F0" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.2"/>
+            <!-- Pool ladder steps -->
+            <line x1="305" y1="155" x2="305" y2="285" stroke="#FAF7F0" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+            <line x1="315" y1="155" x2="315" y2="285" stroke="#FAF7F0" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+            <line x1="305" y1="175" x2="315" y2="175" stroke="#FAF7F0" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+            <line x1="305" y1="195" x2="315" y2="195" stroke="#FAF7F0" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+            <!-- Pool edge highlight -->
+            <rect x="80" y="155" width="240" height="130" rx="12" stroke="#FAF7F0" stroke-width="1.5" fill="none" opacity="0.2"/>
+            <!-- Deck chairs -->
+            <rect x="90" y="300" width="50" height="10" rx="5" fill="#D4860B" opacity="0.7"/>
+            <rect x="95" y="293" width="10" height="14" rx="3" fill="#D4860B" opacity="0.7"/>
+            <!-- Second chair -->
+            <rect x="200" y="300" width="50" height="10" rx="5" fill="#D4860B" opacity="0.6"/>
+            <rect x="205" y="293" width="10" height="14" rx="3" fill="#D4860B" opacity="0.6"/>
+            <!-- Service tech figure (simple) -->
+            <circle cx="175" cy="125" r="10" fill="#0D7377" opacity="0.7"/>
+            <rect x="168" y="136" width="14" height="18" rx="4" fill="#0D7377" opacity="0.7"/>
+            <!-- Net pole -->
+            <line x1="155" y1="130" x2="155" y2="230" stroke="#0D7377" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+            <ellipse cx="155" cy="235" rx="14" ry="8" stroke="#0D7377" stroke-width="2" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WHY CHOOSE US
+============================================================ -->
+<section class="py-16 lg:py-24 bg-lagoon" aria-labelledby="why-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 id="why-heading" class="motion-fade font-display text-sand-light text-3xl lg:text-4xl mb-3" style="font-weight:800;">Why homeowners stick with us</h2>
+      <p class="motion-fade font-body text-sand opacity-80 text-lg max-w-xl mx-auto">We're not a franchise. We're your neighbors who happen to know pools inside and out.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Pillar 1 -->
+      <div class="motion-fade bg-white bg-opacity-10 rounded-2xl p-6 text-center">
+        <div class="w-12 h-12 bg-sunburst bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8A020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-sand-light text-lg mb-2" style="font-weight:700;">Same day, every week</h3>
+        <p class="font-body text-sand opacity-75 text-sm leading-relaxed">You'll know when we're coming. No guessing, no last-minute reschedules.</p>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="motion-fade bg-white bg-opacity-10 rounded-2xl p-6 text-center">
+        <div class="w-12 h-12 bg-sunburst bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8A020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-sand-light text-lg mb-2" style="font-weight:700;">Licensed &amp; insured</h3>
+        <p class="font-body text-sand opacity-75 text-sm leading-relaxed">Fully licensed in Florida. You're covered if anything ever goes sideways.</p>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="motion-fade bg-white bg-opacity-10 rounded-2xl p-6 text-center">
+        <div class="w-12 h-12 bg-sunburst bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8A020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-sand-light text-lg mb-2" style="font-weight:700;">Family-owned &amp; local</h3>
+        <p class="font-body text-sand opacity-75 text-sm leading-relaxed">We live here too. Our reputation is built one St. Johns County yard at a time.</p>
+      </div>
+
+      <!-- Pillar 4 -->
+      <div class="motion-fade bg-white bg-opacity-10 rounded-2xl p-6 text-center">
+        <div class="w-12 h-12 bg-sunburst bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8A020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-sand-light text-lg mb-2" style="font-weight:700;">Transparent pricing</h3>
+        <p class="font-body text-sand opacity-75 text-sm leading-relaxed">Flat monthly rates. No hidden fees, no surprise charges after the visit.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services" class="py-16 lg:py-24 bg-sand-light" aria-labelledby="services-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 id="services-heading" class="motion-fade font-display text-driftwood text-3xl lg:text-4xl mb-3" style="font-weight:800;">What we take care of</h2>
+      <p class="motion-fade font-body text-driftwood-light text-lg max-w-xl mx-auto">Everything your pool needs, handled. Whether it's a quick weekly visit or a green-pool emergency.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Service 1 -->
+      <article class="service-card motion-fade bg-white rounded-2xl p-6 shadow-sm border border-sand">
+        <div class="w-10 h-10 bg-lagoon bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-base mb-2" style="font-weight:700;">Weekly Cleaning &amp; Maintenance</h3>
+        <p class="font-body text-driftwood-light text-sm leading-relaxed mb-4">Skim the surface, brush walls, vacuum the floor, empty baskets, and test water chemistry. Every visit, every week — no shortcuts.</p>
+        <a href="#quote" class="text-lagoon font-body text-sm font-medium hover:text-lagoon-dark transition-colors">Get a quote →</a>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="service-card motion-fade bg-white rounded-2xl p-6 shadow-sm border border-sand">
+        <div class="w-10 h-10 bg-lagoon bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-base mb-2" style="font-weight:700;">Chemical Balancing</h3>
+        <p class="font-body text-driftwood-light text-sm leading-relaxed mb-4">We test and adjust pH, chlorine, alkalinity, and stabilizer levels every visit. Balanced water is safe water — and it protects your equipment.</p>
+        <a href="#quote" class="text-lagoon font-body text-sm font-medium hover:text-lagoon-dark transition-colors">Get a quote →</a>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="service-card motion-fade bg-white rounded-2xl p-6 shadow-sm border border-sand">
+        <div class="w-10 h-10 bg-lagoon bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-base mb-2" style="font-weight:700;">Equipment Inspection</h3>
+        <p class="font-body text-driftwood-light text-sm leading-relaxed mb-4">We check your pump, motor, timer, and pressure gauges on every visit. Catching a failing part early saves you money — and a green pool.</p>
+        <a href="#quote" class="text-lagoon font-body text-sm font-medium hover:text-lagoon-dark transition-colors">Get a quote →</a>
+      </article>
+
+      <!-- Service 4 -->
+      <article class="service-card motion-fade bg-white rounded-2xl p-6 shadow-sm border border-sand">
+        <div class="w-10 h-10 bg-lagoon bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-base mb-2" style="font-weight:700;">Filter Cleaning</h3>
+        <p class="font-body text-driftwood-light text-sm leading-relaxed mb-4">Cartridge, DE, or sand — we clean or backwash your filter on the right schedule so it actually does its job.</p>
+        <a href="#quote" class="text-lagoon font-body text-sm font-medium hover:text-lagoon-dark transition-colors">Get a quote →</a>
+      </article>
+
+      <!-- Service 5 -->
+      <article class="service-card motion-fade bg-white rounded-2xl p-6 shadow-sm border border-sand">
+        <div class="w-10 h-10 bg-lagoon bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-base mb-2" style="font-weight:700;">Salt Cell Maintenance</h3>
+        <p class="font-body text-driftwood-light text-sm leading-relaxed mb-4">Saltwater pool? We inspect and clean your salt cell, check salt levels, and make sure your chlorine generator is producing correctly.</p>
+        <a href="#quote" class="text-lagoon font-body text-sm font-medium hover:text-lagoon-dark transition-colors">Get a quote →</a>
+      </article>
+
+      <!-- Service 6 -->
+      <article class="service-card motion-fade bg-white rounded-2xl p-6 shadow-sm border border-sand">
+        <div class="w-10 h-10 bg-palmetto bg-opacity-15 rounded-lg flex items-center justify-center mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A9B7A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10"/><path d="m9 12 2 2 4-4"/><path d="M17 17v5m0 0-3-3m3 3 3-3"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-base mb-2" style="font-weight:700;">Green-to-Clean Recovery</h3>
+        <p class="font-body text-driftwood-light text-sm leading-relaxed mb-4">Pool turned green? We've seen it before. We'll shock, treat, and bring it back to clear — usually within a few days.</p>
+        <a href="#quote" class="text-lagoon font-body text-sm font-medium hover:text-lagoon-dark transition-colors">Get a quote →</a>
+      </article>
+
+      <!-- Service 7 -->
+      <article class="service-card motion-fade bg-white rounded-2xl p-6 shadow-sm border border-sand">
+        <div class="w-10 h-10 bg-lagoon bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-base mb-2" style="font-weight:700;">One-Time Cleanings</h3>
+        <p class="font-body text-driftwood-light text-sm leading-relaxed mb-4">Not ready for weekly service? We'll do a thorough one-time cleaning — great for getting caught up before summer or after a party.</p>
+        <a href="#quote" class="text-lagoon font-body text-sm font-medium hover:text-lagoon-dark transition-colors">Get a quote →</a>
+      </article>
+
+      <!-- Service 8 -->
+      <article class="service-card motion-fade bg-white rounded-2xl p-6 shadow-sm border border-sand">
+        <div class="w-10 h-10 bg-lagoon bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17 L3 7 A2 2 0 0 1 5 5 L19 5 A2 2 0 0 1 21 7 L21 17"/><path d="M1 17h22"/><path d="M7 5V3h10v2"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-base mb-2" style="font-weight:700;">Vacation Service</h3>
+        <p class="font-body text-driftwood-light text-sm leading-relaxed mb-4">Heading out of town? We'll keep your pool in shape while you're gone, so you come home to a clean, balanced pool — not a project.</p>
+        <a href="#quote" class="text-lagoon font-body text-sm font-medium hover:text-lagoon-dark transition-colors">Get a quote →</a>
+      </article>
+
+      <!-- Service 9 — CTA card -->
+      <article class="motion-fade bg-lagoon rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="font-display font-700 text-sand-light text-lg mb-2" style="font-weight:700;">Not sure what you need?</h3>
+          <p class="font-body text-sand opacity-80 text-sm leading-relaxed mb-6">Tell us about your pool and we'll put together a plan that makes sense for your situation and budget.</p>
+        </div>
+        <a href="#quote" class="btn-primary bg-sunburst text-white font-display font-bold text-sm px-5 py-3 rounded-xl text-center self-start">
+          Talk to us →
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICE AREA
+============================================================ -->
+<section id="service-area" class="py-16 lg:py-24 bg-sand" aria-labelledby="area-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div>
+        <h2 id="area-heading" class="motion-fade font-display text-driftwood text-3xl lg:text-4xl mb-4" style="font-weight:800;">We're right in your neighborhood</h2>
+        <p class="motion-fade font-body text-driftwood-light text-lg leading-relaxed mb-8">
+          We cover all of St. Johns County and the surrounding areas. If your address is on this side of the river, there's a good chance we already service pools on your street.
+        </p>
+        <div class="motion-fade flex flex-wrap gap-3 mb-8">
+          <span class="neighborhood-pill font-body text-sm font-medium bg-sand-light border border-lagoon border-opacity-30 text-driftwood px-4 py-2 rounded-full cursor-default">St. Augustine</span>
+          <span class="neighborhood-pill font-body text-sm font-medium bg-sand-light border border-lagoon border-opacity-30 text-driftwood px-4 py-2 rounded-full cursor-default">Ponte Vedra Beach</span>
+          <span class="neighborhood-pill font-body text-sm font-medium bg-sand-light border border-lagoon border-opacity-30 text-driftwood px-4 py-2 rounded-full cursor-default">Nocatee</span>
+          <span class="neighborhood-pill font-body text-sm font-medium bg-sand-light border border-lagoon border-opacity-30 text-driftwood px-4 py-2 rounded-full cursor-default">Julington Creek</span>
+          <span class="neighborhood-pill font-body text-sm font-medium bg-sand-light border border-lagoon border-opacity-30 text-driftwood px-4 py-2 rounded-full cursor-default">World Golf Village</span>
+          <span class="neighborhood-pill font-body text-sm font-medium bg-sand-light border border-lagoon border-opacity-30 text-driftwood px-4 py-2 rounded-full cursor-default">St. Johns</span>
+          <span class="neighborhood-pill font-body text-sm font-medium bg-sand-light border border-lagoon border-opacity-30 text-driftwood px-4 py-2 rounded-full cursor-default">Fleming Island</span>
+          <span class="neighborhood-pill font-body text-sm font-medium bg-sand-light border border-lagoon border-opacity-30 text-driftwood px-4 py-2 rounded-full cursor-default">Fruit Cove</span>
+        </div>
+        <p class="motion-fade font-body text-driftwood-light text-sm">Don't see your area? Give us a call — we may still be able to help.</p>
+      </div>
+
+      <!-- Stylized map -->
+      <div class="motion-fade flex justify-center">
+        <div class="relative w-full max-w-xs lg:max-w-sm">
+          <svg viewBox="0 0 300 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized map of St. Johns County service area">
+            <rect width="300" height="340" rx="20" fill="#FAF7F0"/>
+            <!-- County outline approximation -->
+            <path d="M60 40 L240 40 L260 80 L260 200 L240 280 L180 310 L80 300 L50 240 L40 140 L60 40Z" fill="#F0E6CC" stroke="#D6C9B0" stroke-width="1.5"/>
+            <!-- Water (Intracoastal) -->
+            <path d="M230 60 Q245 100 248 160 Q250 220 240 275" stroke="#0D7377" stroke-width="4" stroke-linecap="round" opacity="0.3" fill="none"/>
+            <!-- Location dots -->
+            <circle cx="190" cy="90" r="7" fill="#0D7377"/>
+            <text x="200" y="94" font-family="Inter, sans-serif" font-size="10" fill="#2E2520" font-weight="500">Ponte Vedra</text>
+            <circle cx="185" cy="130" r="7" fill="#0D7377"/>
+            <text x="196" y="134" font-family="Inter, sans-serif" font-size="10" fill="#2E2520" font-weight="500">Nocatee</text>
+            <circle cx="140" cy="165" r="7" fill="#D4860B"/>
+            <text x="151" y="169" font-family="Inter, sans-serif" font-size="10" fill="#2E2520" font-weight="500">St. Johns</text>
+            <circle cx="100" cy="195" r="7" fill="#0D7377"/>
+            <text x="112" y="199" font-family="Inter, sans-serif" font-size="10" fill="#2E2520" font-weight="500">Julington Ck</text>
+            <circle cx="195" cy="215" r="7" fill="#0D7377"/>
+            <text x="206" y="219" font-family="Inter, sans-serif" font-size="10" fill="#2E2520" font-weight="500">St. Augustine</text>
+            <circle cx="120" cy="115" r="7" fill="#0D7377"/>
+            <text x="131" y="119" font-family="Inter, sans-serif" font-size="10" fill="#2E2520" font-weight="500">World Golf</text>
+            <!-- Legend -->
+            <circle cx="55" cy="315" r="5" fill="#D4860B"/>
+            <text x="65" y="319" font-family="Inter, sans-serif" font-size="9" fill="#5C4D46">Main office area</text>
+            <circle cx="165" cy="315" r="5" fill="#0D7377"/>
+            <text x="175" y="319" font-family="Inter, sans-serif" font-size="9" fill="#5C4D46">Service stops</text>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     HOW IT WORKS
+============================================================ -->
+<section class="py-16 lg:py-24 bg-sand-light" aria-labelledby="how-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 id="how-heading" class="motion-fade font-display text-driftwood text-3xl lg:text-4xl mb-3" style="font-weight:800;">Getting started is easy</h2>
+      <p class="motion-fade font-body text-driftwood-light text-lg max-w-lg mx-auto">Three steps and your pool is on a regular schedule. Most customers are up and running within a week.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 relative">
+
+      <div class="motion-slide text-center md:text-left">
+        <div class="w-12 h-12 bg-sunburst text-white font-display text-xl rounded-2xl flex items-center justify-center mb-5 mx-auto md:mx-0" style="font-weight:800;">1</div>
+        <h3 class="font-display font-700 text-driftwood text-xl mb-3" style="font-weight:700;">Request a quote</h3>
+        <p class="font-body text-driftwood-light leading-relaxed">Fill out the short form below or give us a call. Tell us your pool size, location, and what you need. We'll get back to you same day.</p>
+      </div>
+
+      <div class="motion-slide text-center md:text-left">
+        <div class="w-12 h-12 bg-sunburst text-white font-display text-xl rounded-2xl flex items-center justify-center mb-5 mx-auto md:mx-0" style="font-weight:800;">2</div>
+        <h3 class="font-display font-700 text-driftwood text-xl mb-3" style="font-weight:700;">We visit &amp; assess</h3>
+        <p class="font-body text-driftwood-light leading-relaxed">We'll stop by to look at your equipment, check the pool's current condition, and confirm what's included in your plan. No surprises.</p>
+      </div>
+
+      <div class="motion-slide text-center md:text-left">
+        <div class="w-12 h-12 bg-sunburst text-white font-display text-xl rounded-2xl flex items-center justify-center mb-5 mx-auto md:mx-0" style="font-weight:800;">3</div>
+        <h3 class="font-display font-700 text-driftwood text-xl mb-3" style="font-weight:700;">Weekly service starts</h3>
+        <p class="font-body text-driftwood-light leading-relaxed">Your regular visit day is locked in. You'll get a text or email after each visit with a brief summary of what was done and anything we noticed.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section class="py-16 lg:py-24 bg-lagoon" aria-labelledby="testimonials-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 id="testimonials-heading" class="motion-fade font-display text-sand-light text-3xl lg:text-4xl mb-3" style="font-weight:800;">What St. Johns County homeowners say</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Testimonial 1 -->
+      <blockquote class="motion-fade bg-white bg-opacity-10 rounded-2xl p-6">
+        <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="font-body text-sand leading-relaxed mb-5 text-sm">"We'd tried two other services before finding St. Augustine Pool Co. The difference is night and day. They actually show up when they say they will, and my pool has been clear and balanced all summer. Worth every penny."</p>
+        <footer class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-sunburst bg-opacity-30 rounded-full flex items-center justify-center font-display font-800 text-sand-light text-sm" style="font-weight:800;" aria-hidden="true">SM</div>
+          <div>
+            <p class="font-display font-700 text-sand-light text-sm" style="font-weight:700;">Sarah M.</p>
+            <p class="font-body text-sand opacity-70 text-xs">Nocatee</p>
+          </div>
+        </footer>
+      </blockquote>
+
+      <!-- Testimonial 2 -->
+      <blockquote class="motion-fade bg-white bg-opacity-10 rounded-2xl p-6">
+        <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="font-body text-sand leading-relaxed mb-5 text-sm">"Our pool pump started making a weird noise and they caught it on their regular visit before it failed completely. Saved us a serious repair bill. That kind of attention is exactly what you want from a pool service."</p>
+        <footer class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-sunburst bg-opacity-30 rounded-full flex items-center justify-center font-display font-800 text-sand-light text-sm" style="font-weight:800;" aria-hidden="true">JT</div>
+          <div>
+            <p class="font-display font-700 text-sand-light text-sm" style="font-weight:700;">James T.</p>
+            <p class="font-body text-sand opacity-70 text-xs">Ponte Vedra Beach</p>
+          </div>
+        </footer>
+      </blockquote>
+
+      <!-- Testimonial 3 -->
+      <blockquote class="motion-fade bg-white bg-opacity-10 rounded-2xl p-6">
+        <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8A020" stroke="none" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="font-body text-sand leading-relaxed mb-5 text-sm">"We were out of town for three weeks in July and came home to a perfectly clean pool. They sent us a quick update each visit. I don't even think about pool maintenance anymore — it just gets handled."</p>
+        <footer class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-sunburst bg-opacity-30 rounded-full flex items-center justify-center font-display font-800 text-sand-light text-sm" style="font-weight:800;" aria-hidden="true">LR</div>
+          <div>
+            <p class="font-display font-700 text-sand-light text-sm" style="font-weight:700;">Lauren R.</p>
+            <p class="font-body text-sand opacity-70 text-xs">World Golf Village</p>
+          </div>
+        </footer>
+      </blockquote>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PRICING TEASER
+============================================================ -->
+<section class="py-16 lg:py-20 bg-sand" aria-labelledby="pricing-heading">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+    <h2 id="pricing-heading" class="motion-fade font-display text-driftwood text-3xl lg:text-4xl mb-4" style="font-weight:800;">Simple, flat monthly pricing</h2>
+    <p class="motion-fade font-body text-driftwood-light text-lg leading-relaxed mb-6">
+      Plans start at <strong class="text-driftwood font-600">$149/month</strong> for weekly service. Your exact price depends on pool size, equipment, and what's included. No contracts required.
+    </p>
+    <p class="motion-fade font-body text-driftwood-light text-base mb-8">
+      Every plan includes weekly visits, chemical balancing, equipment checks, and a summary after each service.
+    </p>
+    <a href="#quote" class="motion-fade btn-primary inline-block bg-sunburst text-white font-display font-bold text-base px-8 py-4 rounded-xl shadow-sm" style="font-weight:700;">
+      Get an exact quote
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section id="faq" class="py-16 lg:py-24 bg-sand-light" aria-labelledby="faq-heading">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 id="faq-heading" class="motion-fade font-display text-driftwood text-3xl lg:text-4xl mb-3" style="font-weight:800;">Common questions</h2>
+    </div>
+
+    <div class="flex flex-col gap-3" role="list">
+
+      <div class="faq-item motion-fade bg-white rounded-2xl border border-sand overflow-hidden" role="listitem">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+          <span class="font-display font-700 text-driftwood text-base" style="font-weight:700;">How often do you come out?</span>
+          <span class="faq-icon flex-shrink-0 w-6 h-6 text-lagoon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body text-driftwood-light text-sm leading-relaxed pb-5">Standard service is weekly — same day each week. We can also set up bi-weekly visits for pools that need less frequent attention, though weekly is strongly recommended in Florida's climate. You'll always have a consistent schedule.</p>
+        </div>
+      </div>
+
+      <div class="faq-item motion-fade bg-white rounded-2xl border border-sand overflow-hidden" role="listitem">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+          <span class="font-display font-700 text-driftwood text-base" style="font-weight:700;">What's included in a regular visit?</span>
+          <span class="faq-icon flex-shrink-0 w-6 h-6 text-lagoon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body text-driftwood-light text-sm leading-relaxed pb-5">Every weekly visit includes: skimming the surface, brushing walls and steps, vacuuming the floor, emptying skimmer and pump baskets, testing and adjusting chemical levels, and a quick equipment check. We'll also note anything that looks like it needs attention and let you know.</p>
+        </div>
+      </div>
+
+      <div class="faq-item motion-fade bg-white rounded-2xl border border-sand overflow-hidden" role="listitem">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+          <span class="font-display font-700 text-driftwood text-base" style="font-weight:700;">Can you handle a green pool?</span>
+          <span class="faq-icon flex-shrink-0 w-6 h-6 text-lagoon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body text-driftwood-light text-sm leading-relaxed pb-5">Yes. Green pool recovery is one of our most common requests in St. Johns County — especially after summer storms or when equipment fails. We'll assess the situation, treat it with the right combination of shock and algaecide, and typically have it clear within 3–5 days depending on severity. There's an additional charge for recovery treatments beyond the standard monthly plan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item motion-fade bg-white rounded-2xl border border-sand overflow-hidden" role="listitem">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+          <span class="font-display font-700 text-driftwood text-base" style="font-weight:700;">Do I need to be home when you service?</span>
+          <span class="faq-icon flex-shrink-0 w-6 h-6 text-lagoon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body text-driftwood-light text-sm leading-relaxed pb-5">Nope. As long as we can access your backyard gate, you don't need to be there. Most of our customers are at work during their service day. We'll send you a summary after each visit so you always know what was done.</p>
+        </div>
+      </div>
+
+      <div class="faq-item motion-fade bg-white rounded-2xl border border-sand overflow-hidden" role="listitem">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+          <span class="font-display font-700 text-driftwood text-base" style="font-weight:700;">What happens to my pool before a hurricane?</span>
+          <span class="faq-icon flex-shrink-0 w-6 h-6 text-lagoon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body text-driftwood-light text-sm leading-relaxed pb-5">When a storm is tracking toward St. Johns County, we'll reach out to let you know what to expect. Generally: lower the water level a few inches, remove any loose equipment, and shock the pool before the storm hits. After the storm passes, we'll schedule an extra visit to clean out debris, rebalance chemicals, and check the equipment. Post-storm cleanups are included in active service plans.</p>
+        </div>
+      </div>
+
+      <div class="faq-item motion-fade bg-white rounded-2xl border border-sand overflow-hidden" role="listitem">
+        <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+          <span class="font-display font-700 text-driftwood text-base" style="font-weight:700;">Is there a contract? How do I cancel?</span>
+          <span class="faq-icon flex-shrink-0 w-6 h-6 text-lagoon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body text-driftwood-light text-sm leading-relaxed pb-5">No long-term contracts. Service is month-to-month. If you need to cancel, just let us know by the 20th of the month and we won't bill you for the next one. We'd rather earn your business every month than lock you in.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FINAL CTA / QUOTE FORM
+============================================================ -->
+<section id="quote" class="py-16 lg:py-24 bg-sand" aria-labelledby="quote-heading">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 id="quote-heading" class="motion-fade font-display text-driftwood text-3xl lg:text-4xl mb-4" style="font-weight:800;">Ready for a hassle-free pool?</h2>
+      <p class="motion-fade font-body text-driftwood-light text-lg leading-relaxed">
+        Fill out the form and we'll get back to you the same day. Rather call? We're at <a href="tel:+19045550192" class="text-lagoon font-medium hover:text-lagoon-dark transition-colors">(904) 555-0192</a>.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <div id="quote-form-wrapper" class="motion-fade bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-sand">
+      <form id="quote-form" novalidate>
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="name" class="block font-body text-sm font-medium text-driftwood mb-1.5">Your name <span class="text-sunburst" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith" class="form-input">
+          </div>
+          <div>
+            <label for="phone" class="block font-body text-sm font-medium text-driftwood mb-1.5">Phone number <span class="text-sunburst" aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(904) 555-0000" class="form-input">
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="address" class="block font-body text-sm font-medium text-driftwood mb-1.5">Pool address <span class="text-sunburst" aria-hidden="true">*</span></label>
+          <input type="text" id="address" name="address" required autocomplete="street-address" placeholder="123 Palmetto Way, Nocatee, FL 32081" class="form-input">
+        </div>
+        <div class="mb-4">
+          <label for="service" class="block font-body text-sm font-medium text-driftwood mb-1.5">What do you need?</label>
+          <select id="service" name="service" class="form-input" style="appearance:none; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235C4D46' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 0.75rem center;">
+            <option value="">Select a service…</option>
+            <option>Weekly cleaning &amp; maintenance</option>
+            <option>One-time cleaning</option>
+            <option>Green-to-clean recovery</option>
+            <option>Vacation service</option>
+            <option>Equipment inspection</option>
+            <option>Not sure — I'd like a recommendation</option>
+          </select>
+        </div>
+        <div class="mb-6">
+          <label for="message" class="block font-body text-sm font-medium text-driftwood mb-1.5">Anything else we should know?</label>
+          <textarea id="message" name="message" rows="3" placeholder="Pool size, current issues, saltwater system, etc." class="form-input resize-none"></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full bg-sunburst text-white font-display font-bold text-base px-6 py-4 rounded-xl shadow-sm" style="font-weight:700;">
+          Send My Quote Request
+        </button>
+        <p class="font-body text-driftwood-light text-xs text-center mt-4">We'll get back to you within a few hours. Usually faster.</p>
+      </form>
+
+      <!-- Thank you state (hidden initially) -->
+      <div id="form-success" class="hidden text-center py-8">
+        <div class="w-14 h-14 bg-palmetto bg-opacity-15 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A9B7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="font-display font-700 text-driftwood text-xl mb-2" style="font-weight:700;">Got it — we'll be in touch soon.</h3>
+        <p class="font-body text-driftwood-light text-sm">We typically respond within a few hours. If you need us right away, give us a call at <a href="tel:+19045550192" class="text-lagoon font-medium">(904) 555-0192</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="bg-driftwood text-sand py-12" role="contentinfo">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <circle cx="16" cy="16" r="14.5" stroke="#F0E6CC" stroke-width="1.5"/>
+            <path d="M7 13 Q10 11 13 13 Q16 15 19 13 Q22 11 25 13" stroke="#F0E6CC" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M7 16 Q10 14 13 16 Q16 18 19 16 Q22 14 25 16" stroke="#F0E6CC" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M7 19 Q10 17 13 19 Q16 21 19 19 Q22 17 25 19" stroke="#F0E6CC" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span class="font-display font-800 text-sand-light text-base" style="font-weight:800;">St. Augustine Pool Co.</span>
+        </div>
+        <p class="font-body text-sand opacity-70 text-sm leading-relaxed max-w-xs">Locally owned pool service for St. Johns County homeowners. We keep your pool clean, balanced, and ready — every single week.</p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-display font-700 text-sand-light text-sm mb-4 uppercase tracking-wider" style="font-weight:700;">Contact</h3>
+        <ul class="flex flex-col gap-2.5">
+          <li>
+            <a href="tel:+19045550192" class="font-body text-sand opacity-80 hover:opacity-100 text-sm transition-opacity flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              (904) 555-0192
+            </a>
+          </li>
+          <li>
+            <a href="mailto:hello@staugustinepoolco.com" class="font-body text-sand opacity-80 hover:opacity-100 text-sm transition-opacity flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              hello@staugustinepoolco.com
+            </a>
+          </li>
+          <li class="font-body text-sand opacity-60 text-sm flex items-start gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Mon–Fri: 7am – 5pm<br>Sat: By appointment
+          </li>
+        </ul>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-display font-700 text-sand-light text-sm mb-4 uppercase tracking-wider" style="font-weight:700;">Service Area</h3>
+        <ul class="flex flex-col gap-2">
+          <li class="font-body text-sand opacity-70 text-sm">St. Augustine</li>
+          <li class="font-body text-sand opacity-70 text-sm">Ponte Vedra Beach</li>
+          <li class="font-body text-sand opacity-70 text-sm">Nocatee</li>
+          <li class="font-body text-sand opacity-70 text-sm">Julington Creek</li>
+          <li class="font-body text-sand opacity-70 text-sm">World Golf Village</li>
+          <li class="font-body text-sand opacity-70 text-sm">St. Johns County</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white border-opacity-10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+        <p class="font-body text-sand opacity-50 text-xs">&copy; 2025 St. Augustine Pool Co. All rights reserved.</p>
+        <p class="font-body text-sand opacity-40 text-xs">Florida Pool &amp; Spa License #[XXXXXXXXX] — Placeholder</p>
+      </div>
+      <!-- Social placeholders -->
+      <div class="flex items-center gap-4">
+        <a href="#" aria-label="Facebook" class="text-sand opacity-50 hover:opacity-90 transition-opacity">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="text-sand opacity-50 hover:opacity-90 transition-opacity">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="Google Reviews" class="text-sand opacity-50 hover:opacity-90 transition-opacity">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT — Nav, Animations, FAQ, Form
+============================================================ -->
+<script>
+(function() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- NAV SCROLL SHADOW ----
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // ---- MOBILE MENU ----
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-open-icon');
+  const closeIcon = document.getElementById('menu-close-icon');
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden', isOpen);
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    openIcon.classList.toggle('hidden', !isOpen);
+    closeIcon.classList.toggle('hidden', isOpen);
+  });
+
+  // Close mobile menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      openIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    });
+  });
+
+  // ---- MOTION ANIMATIONS ----
+  if (!prefersReduced && window.Motion) {
+    const { animate, inView } = window.Motion;
+
+    // Hero entrance — staggered
+    const heroEls = [
+      document.getElementById('hero-eyebrow'),
+      document.getElementById('hero-heading'),
+      document.getElementById('hero-sub'),
+      document.getElementById('hero-ctas'),
+      document.getElementById('hero-trust'),
+      document.getElementById('hero-illustration'),
+    ].filter(Boolean);
+
+    heroEls.forEach((el, i) => {
+      animate(el,
+        { opacity: [0, 1], y: [22, 0], scale: [0.97, 1] },
+        { duration: 0.6, delay: 0.1 + i * 0.12, easing: [0.25, 0.1, 0.25, 1] }
+      );
+    });
+
+    // Scroll-triggered reveals
+    document.querySelectorAll('.motion-fade').forEach((el, i) => {
+      // Skip hero elements (already animated)
+      if (el.closest('section[aria-label="Hero"]')) return;
+      inView(el, () => {
+        animate(el,
+          { opacity: [0, 1], y: [18, 0] },
+          { duration: 0.55, delay: (i % 4) * 0.08, easing: [0.25, 0.1, 0.25, 1] }
+        );
+      }, { amount: 0.15 });
+    });
+
+    // How it works — slide in from left
+    document.querySelectorAll('.motion-slide').forEach((el, i) => {
+      inView(el, () => {
+        animate(el,
+          { opacity: [0, 1], x: [-24, 0] },
+          { duration: 0.55, delay: i * 0.1, easing: [0.25, 0.1, 0.25, 1] }
+        );
+      }, { amount: 0.2 });
+    });
+
+  } else {
+    // No motion — show everything
+    document.querySelectorAll('.motion-fade, .motion-slide').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+
+  // ---- FAQ ACCORDION ----
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').classList.remove('open');
+        i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked (if was closed)
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // ---- QUOTE FORM ----
+  const form = document.getElementById('quote-form');
+  const success = document.getElementById('form-success');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    // Simple required field validation
+    form.querySelectorAll('[required]').forEach(field => {
+      field.style.borderColor = '';
+      if (!field.value.trim()) {
+        field.style.borderColor = '#DC2626';
+        field.focus();
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    // Show success state
+    form.style.display = 'none';
+    success.classList.remove('hidden');
+
+    if (!prefersReduced && window.Motion) {
+      window.Motion.animate(success, { opacity: [0, 1], y: [12, 0] }, { duration: 0.4 });
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
